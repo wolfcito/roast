@@ -1,0 +1,181 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ========= THEME: LIGHT (default) ========= */
+:root {
+  /* Base claros */
+  --background: oklch(0.98 0.01 280);        /* fondo casi blanco con tinte lila MUY sutil */
+  --foreground: oklch(0.22 0.02 260);        /* texto gris-azulado oscuro */
+  --card:       oklch(0.99 0.01 280);
+  --card-foreground: var(--foreground);
+  --popover:    oklch(0.99 0.01 280);
+  --popover-foreground: var(--foreground);
+  --muted:      oklch(0.95 0.01 280);
+  --muted-foreground: oklch(0.46 0.02 260);
+  --border:     oklch(0.90 0.01 280);
+  --input:      oklch(0.96 0.01 280);
+
+  /* Accento principal (mint/teal suave) + ring */
+  --primary:              oklch(0.82 0.08 180);   /* mint/teal suave */
+  --primary-foreground:   oklch(0.22 0.02 260);
+  --ring:                 oklch(0.80 0.07 180);
+
+  /* Secundarios */
+  --secondary:            oklch(0.93 0.02 260);   /* lila muy pálido */
+  --secondary-foreground: var(--foreground);
+  --accent:               oklch(0.96 0.02 250);   /* lavanda pálido */
+  --accent-foreground:    var(--foreground);
+
+  /* Estados */
+  --destructive:            oklch(0.68 0.16 30);  /* coral suave */
+  --destructive-foreground: oklch(0.20 0.02 30);
+
+  /* Sidebar (cards claras) */
+  --sidebar:                    var(--card);
+  --sidebar-foreground:         var(--foreground);
+  --sidebar-primary:            var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent:             oklch(0.96 0.01 280);
+  --sidebar-accent-foreground:  var(--foreground);
+  --sidebar-border:             var(--border);
+  --sidebar-ring:               var(--ring);
+
+  /* ===== Charts (paleta pastel visible sobre claro) ===== */
+  --chart-bg:      oklch(0.985 0.01 280);   /* lienzo leve */
+  --chart-grid:    oklch(0.90 0.01 280);    /* rejilla gris muy clara */
+  --chart-tick:    oklch(0.32 0.02 260);    /* labels de ejes gris oscuro legible */
+  --chart-tooltip: oklch(0.99 0.01 280);
+  --chart-tooltip-b: oklch(0.88 0.01 280);
+
+  /* Series (pastel: morado, teal, azul, rosa, verde) */
+  --chart-1: oklch(0.70 0.11 300);  /* morado suave */
+  --chart-2: oklch(0.78 0.09 180);  /* teal/mint */
+  --chart-3: oklch(0.76 0.09 240);  /* azul */
+  --chart-4: oklch(0.82 0.10 20);   /* coral/rosa suave */
+  --chart-5: oklch(0.80 0.10 140);  /* verde pastel */
+
+  /* Radios */
+  --radius: 0.625rem;
+
+  /* Tipografías base */
+  --font-sans: "Geist", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  /* Hover/active */
+  --primary-hover: oklch(0.78 0.08 180);
+  --primary-active: oklch(0.74 0.08 180);
+}
+
+/* ========= THEME: DARK (tu paleta previa) ========= */
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.96 0 0);
+  --card:       oklch(0.16 0 0);
+  --card-foreground: var(--foreground);
+  --popover:    oklch(0.16 0 0);
+  --popover-foreground: var(--foreground);
+  --muted:      oklch(0.26 0 0);
+  --muted-foreground: oklch(0.75 0 0);
+  --border:     oklch(0.23 0 0);
+  --input:      oklch(0.20 0 0);
+
+  --primary:              oklch(0.62 0.14 262);
+  --primary-foreground:   oklch(0.98 0 0);
+  --ring:                 oklch(0.68 0.12 262);
+
+  --secondary:            oklch(0.20 0 0);
+  --secondary-foreground: var(--foreground);
+  --accent:               oklch(0.22 0.02 250);
+  --accent-foreground:    var(--foreground);
+
+  --destructive:            oklch(0.58 0.18 27);
+  --destructive-foreground: oklch(0.98 0 0);
+
+  --sidebar:                    oklch(0.15 0 0);
+  --sidebar-foreground:         var(--foreground);
+  --sidebar-primary:            var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent:             oklch(0.18 0.01 250);
+  --sidebar-accent-foreground:  var(--foreground);
+  --sidebar-border:             oklch(0.22 0 0);
+  --sidebar-ring:               var(--ring);
+
+  --chart-1: oklch(0.78 0.14 262);
+  --chart-2: oklch(0.80 0.11 210);
+  --chart-3: oklch(0.82 0.10 180);
+  --chart-4: oklch(0.84 0.09 140);
+  --chart-5: oklch(0.76 0.12 300);
+
+  --chart-bg:        oklch(0.18 0 0);
+  --chart-grid:      oklch(0.38 0 0 / 0.55);
+  --chart-tick:      oklch(0.88 0 0);
+  --chart-tooltip:   oklch(0.16 0 0);
+  --chart-tooltip-b: oklch(0.28 0 0);
+
+  --radius: 0.625rem;
+
+  --font-sans: "Geist", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --primary-hover: oklch(0.58 0.14 262);
+  --primary-active: oklch(0.55 0.14 262);
+}
+
+/* Mapeo a tokens Tailwind */
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  body { @apply bg-background text-foreground; }
+}
+
+/* Helpers */
+.btn-primary { background: var(--primary); color: var(--primary-foreground); }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-primary:active { background: var(--primary-active); }
+.btn-muted { background: var(--muted); color: var(--muted-foreground); }
