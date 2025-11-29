@@ -323,13 +323,18 @@ export function RepoJudge() {
     <div className="min-h-screen bg-background">
       <header className="border-b border-border bg-card sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-br from-chart-1 to-chart-2 rounded-lg p-2">
-              <Github className="w-6 h-6 text-white" />
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="bg-gradient-to-br from-chart-1 to-chart-2 rounded-lg p-2">
+                <Github className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-foreground">Repo Judge — Avalanche + WDK</h1>
+                <p className="text-sm text-muted-foreground">Static audit for the hackathon rubric</p>
+              </div>
             </div>
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">Repo Judge — Avalanche + WDK</h1>
-              <p className="text-sm text-muted-foreground">Static audit for the hackathon rubric</p>
+            <div className="flex items-center gap-2">
+              <appkit-button balance="show" className="inline-flex min-w-[200px]" />
             </div>
           </div>
         </div>
