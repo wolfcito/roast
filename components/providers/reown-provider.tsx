@@ -3,7 +3,12 @@
 import type { ReactNode } from "react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { createAppKit } from "@reown/appkit/react"
-import { avalanche, avalancheFuji, mainnet } from "@reown/appkit/networks"
+import {
+  type AppKitNetwork,
+  avalanche,
+  avalancheFuji,
+  mainnet,
+} from "@reown/appkit/networks"
 import { WagmiAdapter } from "@reown/appkit-adapter-wagmi"
 import { WagmiProvider } from "wagmi"
 
@@ -17,7 +22,11 @@ const metadata = {
   icons: ["https://avatars.githubusercontent.com/u/179229932"],
 }
 
-const networks = [avalanche, avalancheFuji, mainnet]
+const networks: [AppKitNetwork, ...AppKitNetwork[]] = [
+  avalanche,
+  avalancheFuji,
+  mainnet,
+]
 
 const wagmiAdapter = new WagmiAdapter({
   networks,
